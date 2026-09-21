@@ -5,21 +5,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Css File path -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+/* ---- Reset ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ---- Header / Navbar ---- */
+header {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #262626;
+}
+
+.navbar {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    padding: 24px 20px;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    transition: color 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: #ffffff;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: 20px;
+}
+
+.socials a {
+    color: #b3b3b3;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.socials a:hover {
+    color: #7ed321;
+}
+
+/* ---- Hero Section ---- */
+.hero {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 110px 40px 90px;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1 1 420px;
+    max-width: 560px;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 28px;
+}
+
+.hero-text p {
+    color: #9a9a9a;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 480px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #5c9c1c;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 18px 36px;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(124, 214, 30, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(124, 214, 30, 0.65);
+}
+
+.hero-image {
+    flex: 0 0 auto;
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #3a3f3a;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---- Worked With Section ---- */
+.worked-with {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 40px 120px;
+}
+
+.worked-with-label {
+    color: #777777;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.logo-box {
+    background-color: #161616;
+    border: 1px solid #262626;
+    border-radius: 6px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b6b6b;
+    font-weight: 700;
+    font-size: 17px;
+    text-align: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 24px;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        gap: 20px;
+        font-size: 14px;
+    }
+}
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Home Page</title>
 </head>
 
 <body>
     <header>
-        <div class="Nav-links">
-            <a href="./index.html" class="brand">Your<span>Name</span></a>
-            <a href="./index.html" class="active">Home</a>
-            <a href="./About.html">About</a>
-            <a href="./Service.html">Services</a>
-            <a href="./Contact.html">Contact</a>
-        </div>
+        <nav class="navbar">
+            <a href="./index.html" class="nav-item active">Home</a>
+            <a href="./Service.html#case-studies" class="nav-item">Case Studies</a>
+            <a href="./Service.html#testimonials" class="nav-item">Testimonials</a>
+            <a href="./Service.html#recent-work" class="nav-item">Recent work</a>
+            <a href="./Contact.html" class="nav-item">Get In Touch</a>
 
+            <div class="socials">
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </nav>
     </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Your Name Here</h1>
+                <p>
+                    Intro text: Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua.
+                </p>
+                <a href="./Contact.html" class="cta-btn">Let's get started &gt;</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="profile.jpg" alt="Your Name">
+            </div>
+        </section>
+
+        <section class="worked-with">
+            <p class="worked-with-label">Worked with</p>
+            <div class="logo-grid">
+                <div class="logo-box">ClickUp</div>
+                <div class="logo-box">Dropbox</div>
+                <div class="logo-box">PAYCHEX</div>
+                <div class="logo-box">elastic</div>
+                <div class="logo-box">stripe</div>
+            </div>
+        </section>
+    </main>
+
 </body>
 
 </html>
